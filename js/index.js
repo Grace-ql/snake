@@ -17,7 +17,7 @@ $(function(){
 }
 	yemian();
 	  var she=[{x:0,y:0},{x:0,y:1},{x:0,y:2}];
-	  var shebiao={'0_0':true,'0_1':true,'0_2':true};
+	  var shebiao={'0_0':true,'0_1':true,'0_2':true};//是否撞到自己以及不可放食物
 	  function findDiv(x,y){
 	  	 return $('#' +x+'_'+y);
 	  }
@@ -75,7 +75,7 @@ $(function(){
 	    } 
 	  }
 	  //食物
-	 var timerId=setInterval(move,200);
+	 // var timerId=setInterval(move,200);
 	  $(document).on('keyup',function(e){
 	  	var biao={37:'zuo',38:'shang',39:'you',40:'xia'};
 	  	var fanbiao={'zuo':37,'shang':38,'you':39,'xia':40};
@@ -89,12 +89,12 @@ $(function(){
 	  var i=0;
 	  $('.one span').on('click',function(){
 		  $(this).toggleClass('active')
-		setInterval(move,200)
-		alert('游戏继续');
+		 t=setInterval(move,500)
+		alert('游戏开始');
 	  })
 	  $('.three span').on('click',function(){
 		  $(this).toggleClass('active')
-	  	 	clearInterval(timerId);
+	  	 	clearInterval(t);
 		    alert('游戏暂停');
 	  })
 	$('.two span').on('click',function(){
